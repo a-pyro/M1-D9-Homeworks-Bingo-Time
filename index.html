@@ -32,12 +32,23 @@
 
     <title>Bingo Time!</title>
   </head>
-  <body class="animate__animated animate__fadeIn">
+  <body class="animate__animated animate__zoomIn">
     <div class="container">
       <h1>Bingo Time!</h1>
+      <!-- main board -->
       <main id="board">
         <button id="fireBtn">🔥</button>
       </main>
+      <!-- select num of boards -->
+      <section id="userChoice">
+        <label for="userBoardsNum"
+          >Choose number of boards you wish to play with</label
+        >
+        <input type="number" name="userBoardsNum" id="userBoardsNum" />
+        <button id="userBoardsBtn">Let's play!</button>
+      </section>
+      <!-- userboards -->
+      <section id="userBoards"></section>
     </div>
     <!--
         BINGO CHALLENGE!!!
@@ -45,7 +56,7 @@
         Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
 
         EXTRA: 
-        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+       x - Take ALWAYS a new number (avoid randoming 10 3 times for example)
         - Create a USER BOARD with random 24 numbers that highlights as the main board does
         - Let the user choose HOW MANY user boards he's willing to play with and create them.
     -->

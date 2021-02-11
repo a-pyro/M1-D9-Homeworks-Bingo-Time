@@ -1,3 +1,6 @@
+:root {
+  --animate-duration: 600ms;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -13,12 +16,17 @@ body {
   margin: 0 auto;
 }
 
-#board {
+#board,
+#userBoards {
   padding: 0.5rem;
   border: 1px solid black;
   border-radius: 8px;
   text-align: center;
 }
+#board {
+  margin-bottom: 2.5rem;
+}
+
 button {
   padding: 0.3rem 0.9rem;
   display: block;
@@ -27,6 +35,12 @@ button {
   cursor: pointer;
   margin: 0.4rem auto;
   outline: none;
+}
+#userChoice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
 }
 
 button:active {
