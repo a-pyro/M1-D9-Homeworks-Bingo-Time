@@ -12,20 +12,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //functions
   const spitRandomNum = () => {
-    while (true) {
-      let randomNum = Math.floor(Math.random() * 76) + 1;
-      if (!numsMemory.includes(randomNum)) {
-        numsMemory.push(randomNum);
-        break;
+    if (!checkForWinningBoards()) {
+      const userBoardsNum = document.getElementById('userBoardsNum').value;
+      if (!userBoardsNum) userBoardsBtn.click();
+      while (true) {
+        let randomNum = Math.floor(Math.random() * 76) + 1;
+        if (!numsMemory.includes(randomNum)) {
+          numsMemory.push(randomNum);
+          break;
+        }
+      }
+      highlightBoardNum();
+    } else {
+      const notificationDom = document.querySelector('.notification');
+      console.log(notificationDom);
+      if (!notificationDom) {
+        notification('you won!', 'green');
       }
     }
+
     //check for uniqueness
     /* const sorted = [...numsMemory].sort((a, b) => a - b);
     console.log(sorted); */
 
     //chiama funzione per evidenziare
-    highlightBoardNum();
     checkForWinningBoards();
+    if (checkForWinningBoards()) {
+    }
   };
 
   const saveBoardInMemory = () => {
@@ -70,7 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const num = document.createElement('h3');
         num.innerText = userBoardsMemory[i][j]; //prendo il primo num della board in memoria e lo assegno alla board sulla UI
         cell.appendChild(num);
-        cell.classList.add('cell', 'user-cell');
+        cell.classList.add('user-cell');
         num.classList.add('number', 'user-number');
         userBoard.appendChild(cell);
       }
@@ -100,6 +113,17 @@ window.addEventListener('DOMContentLoaded', () => {
         return true;
       }
     }
+  };
+
+  //generate notifications
+  const notification = (message, color) => {
+    const html = `
+      <span class='notification notification-${color} hide'>${message}</span>`;
+    document.querySelector('h1').insertAdjacentHTML('afterend', html);
+    setTimeout(() => {
+      console.log(document.querySelector('.notification'));
+      document.querySelector('.notification').classList.remove('hide');
+    }, 1000);
   };
 
   //listeners

@@ -16,7 +16,7 @@ body {
   color: #f8f8f8;
 }
 .container {
-  max-width: 768px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
@@ -73,6 +73,8 @@ button:active {
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #f8f8f8;
 }
 
 .user-number {
@@ -96,4 +98,35 @@ input[type='number'] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+h1 {
+  display: inline-block;
+}
+
+.notification {
+  width: 200px;
+  border: 1px solid #455a64;
+  background-color: #607d8b;
+  padding: 0.6rem 0.9rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.notification-green {
+  background-color: #8bc34a;
+}
+.notification-red {
+  background-color: #e64a19;
+}
+
+.hide {
+  transform: translateY(-200px);
+  transition: all 0.2s ease;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
