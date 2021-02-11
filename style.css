@@ -66,6 +66,7 @@ button:active {
   border: 1px solid black;
   justify-content: space-between;
   align-items: center;
+  border-radius: 8px;
 }
 
 .user-number {
@@ -79,4 +80,13 @@ input[type='number'] {
   width: 50px;
   border-radius: 8px;
   border: 1px solid black;
+}
+
+.winning-board {
+  background-color: green;
+}
+.user-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //chiama funzione per evidenziare
     highlightBoardNum();
-    checkForWin();
+    checkForWinningBoards();
   };
 
   const saveBoardInMemory = () => {
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const num = document.createElement('h3');
         num.innerText = userBoardsMemory[i][j]; //prendo il primo num della board in memoria e lo assegno alla board sulla UI
         cell.appendChild(num);
-        cell.classList.add('cell');
+        cell.classList.add('cell', 'user-cell');
         num.classList.add('number', 'user-number');
         userBoard.appendChild(cell);
       }
@@ -80,14 +80,25 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   //check for win
-  const checkForWin = () => {
+  const checkForWinningBoards = () => {
     console.log(numsMemory);
     //prendo numeri delluser
     const userBoards = document.querySelectorAll('.user-board');
 
     for (const board of userBoards) {
-      const commonNumbers = new Set([...Array.from(board), numsMemory]); //numeri comuni
-      console.log(commonNumbers);
+      const h3sNums = board.querySelectorAll('.user-number');
+      const nums = Array.from(h3sNums).map((h3) => parseInt(h3.innerText));
+      console.log(nums);
+
+      const sum = nums.reduce((acc, cv) => {
+        if (numsMemory.includes(cv)) return (acc += 1);
+        return acc;
+      }, 0);
+      console.log(sum);
+      if (sum >= 5) {
+        board.classList.add('winning-board');
+        return true;
+      }
     }
   };
 
