@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   console.log('dom loaded');
 
   //memoria
+  const numsMemory = [];
 
   //referenze dom
   const board = document.getElementById('board');
@@ -9,7 +10,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //functions
   const spitRandomNum = (e) => {
-    console.log('ifire');
+    while (true) {
+      let randomNum = Math.floor(Math.random() * 76) + 1;
+      if (!numsMemory.includes(randomNum)) {
+        numsMemory.push(randomNum);
+        break;
+      }
+    }
+
+    //check for uniqueness
+    const sorted = [...numsMemory].sort((a, b) => a - b);
+    console.log(sorted);
   };
 
   //listeners
