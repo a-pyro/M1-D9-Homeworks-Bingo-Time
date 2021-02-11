@@ -10,6 +10,10 @@ html {
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1170' height='1920' preserveAspectRatio='none' viewBox='0 0 1170 1920'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1764%26quot%3b)' fill='none'%3e%3crect width='1170' height='1920' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0%2c915.376C170.129%2c920.248%2c309.927%2c796.919%2c455.836%2c709.294C606.439%2c618.85%2c789.064%2c553.425%2c865.823%2c395.408C942.999%2c236.532%2c885.525%2c51.126%2c860.481%2c-123.719C835.424%2c-298.657%2c841.421%2c-495.491%2c719.845%2c-623.75C599.23%2c-750.995%2c406.231%2c-776.646%2c231.244%2c-787.546C80.417%2c-796.941%2c-54.909%2c-723.392%2c-199.973%2c-681.044C-345.31%2c-638.616%2c-508.918%2c-639.749%2c-621.565%2c-538.589C-739.776%2c-432.433%2c-801.631%2c-275.76%2c-826.091%2c-118.774C-850.728%2c39.35%2c-829.008%2c202.702%2c-759.529%2c346.865C-690.889%2c489.286%2c-565.929%2c588.918%2c-439.359%2c683.656C-304.065%2c784.924%2c-168.927%2c910.538%2c0%2c915.376' fill='%230b2239'%3e%3c/path%3e%3cpath d='M1170 2759.133C1339.6399999999999 2772.05 1526.788 2789.5 1665.367 2690.806 1802.741 2592.9700000000003 1814.527 2399.709 1887.903 2247.855 1963.306 2091.806 2102.558 1959.223 2102.612 1785.911 2102.668 1604.49 2014.039 1428.3600000000001 1888.1970000000001 1297.679 1765.446 1170.2069999999999 1593.2939999999999 1100.011 1418.094 1075.0700000000002 1256.945 1052.129 1093.879 1091.681 947.968 1163.829 817.475 1228.354 747.403 1362.6480000000001 639.309 1460.154 511.698 1575.266 281.182 1618.587 255.46000000000004 1788.509 229.78700000000003 1958.109 441.25699999999995 2064.873 525.121 2214.506 599.85 2347.841 604.077 2520.264 720.8530000000001 2618.886 843.158 2722.178 1010.375 2746.978 1170 2759.133' fill='%23113255'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1764'%3e%3crect width='1170' height='1920' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f8f8f8;
 }
 .container {
   max-width: 768px;
@@ -25,6 +29,8 @@ body {
 }
 #board {
   margin-bottom: 2.5rem;
+  background-color: #455a64;
+  color: #f8f8f8;
 }
 
 button {
@@ -44,7 +50,7 @@ button {
 }
 
 button:active {
-  box-shadow: inset 0px 2px 2px;
+  box-shadow: 0px 2px 2px;
 }
 
 .cell {
@@ -57,7 +63,7 @@ button:active {
 } */
 
 .num-out {
-  color: red;
+  color: #e64a19;
 }
 
 .user-board {
@@ -80,10 +86,11 @@ input[type='number'] {
   width: 50px;
   border-radius: 8px;
   border: 1px solid black;
+  text-align: center;
 }
 
 .winning-board {
-  background-color: green;
+  background-color: #8bc34a;
 }
 .user-cell {
   display: flex;
