@@ -53,9 +53,22 @@ button:active {
   height: 50px;
 }
 
-.num {
-}
+/* .num {
+} */
 
 .num-out {
   color: red;
+}
+
+.user-board {
+  margin-bottom: 1rem;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-number {
+  margin: 0;
+  text-align: center;
 }
