@@ -8,3 +8,26 @@ body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
 }
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+#board {
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+button {
+  padding: 0.3rem 0.9rem;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0.4rem auto;
+  outline: none;
+}
+
+button:active {
+  box-shadow: inset 0px 2px 2px;
+}
