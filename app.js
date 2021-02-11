@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const fireBtn = document.getElementById('fireBtn');
 
   //functions
-  const spitRandomNum = (e) => {
+  const spitRandomNum = () => {
     while (true) {
       let randomNum = Math.floor(Math.random() * 76) + 1;
       if (!numsMemory.includes(randomNum)) {
@@ -17,11 +17,23 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       }
     }
-
     //check for uniqueness
-    const sorted = [...numsMemory].sort((a, b) => a - b);
-    console.log(sorted);
+    /* const sorted = [...numsMemory].sort((a, b) => a - b);
+    console.log(sorted); */
+
+    //chiama funzione per evidenziare
+    highlightBoardNum();
   };
+
+  //mi serve una funzione che guarda all'ultimo elemento nell'array e mi attacca la classe al corrispettivo numero nella board
+  function highlightBoardNum() {
+    const lastNumberOut = numsMemory[numsMemory.length - 1];
+    const numbers = document.querySelectorAll('.number');
+    numbers.forEach((number) => {
+      const value = parseInt(number.innerText);
+      if (lastNumberOut === value) number.classList.add('num-out');
+    });
+  }
 
   //listeners
   fireBtn.addEventListener('click', spitRandomNum);
