@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //chiama funzione per evidenziare
     highlightBoardNum();
+    checkForWin();
   };
 
   const saveBoardInMemory = () => {
@@ -73,8 +74,20 @@ window.addEventListener('DOMContentLoaded', () => {
         num.classList.add('number', 'user-number');
         userBoard.appendChild(cell);
       }
-      userBoard.classList.add('user-board');
+      userBoard.classList.add('user-board', `board-${i + 1}`);
       userBoardsDOM.appendChild(userBoard);
+    }
+  };
+
+  //check for win
+  const checkForWin = () => {
+    console.log(numsMemory);
+    //prendo numeri delluser
+    const userBoards = document.querySelectorAll('.user-board');
+
+    for (const board of userBoards) {
+      const commonNumbers = new Set([...Array.from(board), numsMemory]); //numeri comuni
+      console.log(commonNumbers);
     }
   };
 
