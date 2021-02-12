@@ -22,6 +22,12 @@ window.addEventListener('DOMContentLoaded', () => {
           break;
         }
       }
+      /* Do while alternativo 
+      do {
+      const randomNum = Math.floor(Math.random() * 76) + 1;
+      } while (numsMemory.includes(randomNum))
+      numsMemory.push(randomNum)
+      */
       highlightBoardNum();
     } else {
       const notificationDom = document.querySelector('.notification');
